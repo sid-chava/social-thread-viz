@@ -1,0 +1,52 @@
+.edge-fade {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+.edge-fade.fade-in {
+  opacity: 1;
+}
+.edge-fade.fade-out {
+  opacity: 0;
+}
+
+body, .App, .flex-1, .h-screen {
+  background: #23272f !important;
+  color: #f3f3f3 !important;
+}
+
+header, .bg-slate-900 {
+  background: #23272f !important;
+  color: #fff !important;
+}
+
+/* Node and panel backgrounds */
+.bg-white, .w-96, .rounded-lg, .shadow-lg, .border, .p-4, .px-4, .py-3 {
+  background: #2d323c !important;
+  color: #f3f3f3 !important;
+  border-color: #444a56 !important;
+}
+
+/* Node border highlight */
+.border {
+  border-color: #444a56 !important;
+}
+
+/* Status bar */
+.bg-white.p-2 {
+  background: #23272f !important;
+  color: #bbb !important;
+  border-top: 1px solid #444a56 !important;
+}
+
+/* Edge label */
+.edge-fade > div {
+  background: #23272f !important;
+  color: #fff !important;
+  border: 1px solid #444a56 !important;
+}
+
+/* Node hover/selected */
+.scale-105, .shadow-lg {
+  box-shadow: 0 2px 12px #000a !important;
+  background: #353a45 !important;
+} 
