@@ -1,54 +1,105 @@
-# React + TypeScript + Vite
+# Social Thread Visualization
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based visualization tool for social media threads, built with TypeScript and Vite. This project provides an interactive way to visualize and analyze social media conversations, with features for clustering and embedding analysis.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Interactive thread visualization
+- Post clustering based on content similarity
+- Embedding analysis for semantic understanding
+- Real-time data processing
+- Responsive design with Tailwind CSS
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend**: React + TypeScript + Vite
+- **Styling**: Tailwind CSS
+- **Data Processing**: Python scripts for data generation and analysis
+- **Visualization**: Custom React components for thread mapping
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- Python 3.8+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/sid-chava/social-thread-viz.git
+cd social-thread-viz
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Install frontend dependencies:
+```bash
+npm install
 ```
+
+3. Install Python dependencies:
+```bash
+cd scripts
+pip install -r requirements.txt
+```
+
+4. Set up environment variables:
+```bash
+cp .env.example .env
+```
+Edit `.env` with your configuration values.
+
+### Development
+
+1. Start the development server:
+```bash
+npm run dev
+```
+
+2. Generate mock data (if needed):
+```bash
+python scripts/deduplicate_mock_data.py
+python scripts/generate_embeddings.py
+python scripts/generate_clusters.py
+```
+
+## Project Structure
+
+```
+social-thread-viz/
+├── src/
+│   ├── components/     # React components
+│   ├── data/          # Mock data and processed data
+│   ├── types/         # TypeScript type definitions
+│   └── assets/        # Static assets
+├── scripts/           # Python data processing scripts
+├── public/           # Public assets
+└── ...
+```
+
+## Data Processing
+
+The project includes several Python scripts for data processing:
+
+- `deduplicate_mock_data.py`: Removes duplicate entries from mock data
+- `generate_embeddings.py`: Creates embeddings for text analysis
+- `generate_clusters.py`: Groups similar posts into clusters
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- OpenAI for embedding generation
+- React and Vite communities for the excellent tooling
+- Tailwind CSS for the styling framework
